@@ -5,7 +5,9 @@ function randomIntFromInterval(min, max) { // min and max included
 function computerPlay() {
     const options = ["rock", "paper", "scissors"];
     var i = randomIntFromInterval(0, 2);
-    return options[i];
+    var choice = options[i];
+    return choice;
+    
 }
 
 function playerSelect() {
@@ -17,16 +19,16 @@ function playerSelect() {
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection == computerSelection){
-        return 2; // return 2 if tie
+        return "2"; // return 2 if tie
     } 
 
     else{
         if((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-            return 1; // return 1 if player won
+            return "1"; // return 1 if player won
         }
 
         else{
-            return 0; // return 0 if computer won
+            return "0"; // return 0 if computer won
         }
     }
 }
@@ -37,7 +39,7 @@ function game() {
     var playerscore = 0;
     var computerscore = 0;
 
-    while(rounds <= 5){
+    while(rounds < 5){
         var playerselection = playerSelect();
         var computerselection = computerPlay();
 
